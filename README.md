@@ -11,3 +11,9 @@ npx create-react-app react-frontend
 
 PS D:\Git\ReactJS-Spring-Boot-CRUD-Full-Stack-App> cd .\react-frontend\
 PS D:\Git\ReactJS-Spring-Boot-CRUD-Full-Stack-App\react-frontend> npm start
+
+
+# connecting eachother
+https://getbootstrap.com/docs/5.0/getting-started/introduction/
+or 
+npm install bootstrap --save 
