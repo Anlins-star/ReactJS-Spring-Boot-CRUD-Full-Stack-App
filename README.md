@@ -19,3 +19,5 @@ npm install bootstrap --save
 
 # connecting eachother
 https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets
+
+npm install axios --safe
