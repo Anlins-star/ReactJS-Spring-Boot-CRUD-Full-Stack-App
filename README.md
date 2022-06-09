@@ -21,3 +21,5 @@ npm install bootstrap --save
 https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets
 
 npm install axios --safe
+
+ npm install react-router-dom
