@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import EmployeeService from '../services/EmployeeService';
 
-class CreateEmployeeComponent extends Component {
+import { useNavigate } from "react-router-dom";
+
+class CreateEmployeeComponentSub extends Component {
     constructor(props){
         super(props)
         this.state = {
@@ -41,8 +44,12 @@ class CreateEmployeeComponent extends Component {
             firstName: this.state.firstName, 
             lastName: this.state.lastName, 
             emailId: this.state.emailId,     
-        }
-        console.log('employee => ' + JSON.stringify(employee))
+        };
+        console.log('employee => ' + JSON.stringify(employee));
+
+        EmployeeService.createEmployee(employee).then(res=>{
+            this.props.navigate('/employees');
+        })
     }
     /* react-router 4
     cancel(){
@@ -90,6 +97,12 @@ class CreateEmployeeComponent extends Component {
             </div>
         );
     }
+}
+//workaround how to run react6 for classes from react5
+//https://stackoverflow.com/questions/63786452/react-navigate-router-v6-invalid-hook-call
+function CreateEmployeeComponent(props) {
+    let navigate = useNavigate();
+    return <CreateEmployeeComponentSub {...props} navigate={navigate} />
 }
 
 export default CreateEmployeeComponent;

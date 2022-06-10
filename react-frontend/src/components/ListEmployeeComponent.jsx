@@ -31,7 +31,7 @@ class ListEmployeeComponent extends Component {
                         <thead>
                             <tr>
                                 <th>Employee First Name</th>
-                                <th>Employee First Lastname</th>
+                                <th>Employee Last Name</th>
                                 <th>Employee Email Id</th>
                                 <th>Actions</th>
                             </tr>
@@ -57,4 +57,4 @@ class ListEmployeeComponent extends Component {
     }
 }
 
-export default ListEmployeeComponent;//ListEmployeeComponent;
+export default ListEmployeeComponent;

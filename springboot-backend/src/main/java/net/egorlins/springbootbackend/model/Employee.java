@@ -11,17 +11,17 @@ public class Employee {
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
-    private String lastname;
+    private String lastName;
     @Column(name = "email_id")
     private String emailId;
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastname, String emailId) {
+    public Employee(String firstName, String lastName, String emailId) {
         super(); //not created automatically
         this.firstName = firstName;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.emailId = emailId;
     }
 
@@ -41,12 +41,12 @@ public class Employee {
         this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getlastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmailId() {
