@@ -44,7 +44,14 @@ class ListEmployeeComponent extends Component {
                                         <td> {employee.firstName} </td>
                                         <td> {employee.lastName} </td>
                                         <td> {employee.emailId} </td>
-
+                                        <td>
+                                            {/* //https://stackoverflow.com/questions/53994363/react-router-link-variables-not-converted-to-values
+                                            //https://stackoverflow.com/questions/53994363/react-router-link-variables-not-converted-to-values
+                                             */}
+                                             <Link to={`/update-employee/${employee.id}`}>
+                                                <button className='btn btn-primary'>Update</button>
+                                            </Link> 
+                                        </td>
                                     </tr>
                                 )
                             }
