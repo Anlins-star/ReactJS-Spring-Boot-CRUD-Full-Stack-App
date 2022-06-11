@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import EmployeeService from '../services/EmployeeService';
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 class UpdateEmployeeComponentSub extends Component {
     constructor(props){
@@ -53,7 +51,6 @@ class UpdateEmployeeComponentSub extends Component {
 
     }
 
-
     render() {
         return (
             <div>
@@ -83,7 +80,6 @@ class UpdateEmployeeComponentSub extends Component {
                                     <Link to="/employees">
                                         <button className='btn btn-danger' style={{marginLeft:"10px"}}>Cancel</button>
                                     </Link>
-                                    {/* react-router 4 <button className='btn btn-danger' onClick={this.cancel.bind(this)} style={{marginLeft:"10px"}}>Cancel</button> */}
                                 </form>
                             </div>
 
@@ -98,13 +94,10 @@ class UpdateEmployeeComponentSub extends Component {
 }
 //workaround how to run react6 for classes from react5
 //https://stackoverflow.com/questions/63786452/react-navigate-router-v6-invalid-hook-call
+//https://stackoverflow.com/questions/70585815/react-this-props-match-is-undefined
 function UpdateEmployeeComponent(props) {
     let navigate = useNavigate();
-
     const params = useParams();
-    //const item = this.state.starters.find((dish) => dish.id === Number(id));
-
-
     return <UpdateEmployeeComponentSub {...props} navigate={navigate} params={params} />
 }
 
