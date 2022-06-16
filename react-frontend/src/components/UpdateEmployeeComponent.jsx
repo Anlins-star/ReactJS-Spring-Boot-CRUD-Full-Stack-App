@@ -47,14 +47,16 @@ class UpdateEmployeeComponentSub extends Component {
             emailId: this.state.emailId,     
         };
         console.log('employee => ' + JSON.stringify(employee));
-
+        EmployeeService.updateEmployee(employee, this.state.id).then( res => {
+            this.props.navigate('/employees');
+        });
 
     }
 
     render() {
         return (
             <div>
-                <h1>Employee Form</h1>
+                <br></br>
                 <div className='container'>
                     <div className='row'>
                         <div className='card col-md-6 offset-md-3 offset-md-3'>
