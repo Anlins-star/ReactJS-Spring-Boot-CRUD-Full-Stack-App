@@ -21,7 +21,7 @@ class ListEmployeeComponent extends Component {
             <div>
                 <h2 className='text-center'>Employees List</h2>
                 <div className='row'>
-                    <Link to="/add-employee/-1">
+                    <Link to="/add-employee/_add">
                         <button className='btn btn-primary'>Add Employee</button>
                     </Link>
                 </div>

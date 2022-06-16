@@ -20,7 +20,7 @@ class CreateEmployeeComponentSub extends Component {
 
     componentDidMount(){
 
-        if (-1 == this.state.id){
+        if ('_add' === this.state.id){
             return;
         }
         EmployeeService.getEmployeeById(this.state.id).then(res=>{
@@ -61,7 +61,7 @@ class CreateEmployeeComponentSub extends Component {
         };
         console.log('employee => ' + JSON.stringify(employee));
 
-        if (-1 == this.state.id){
+        if ('_add' === this.state.id){
             EmployeeService.createEmployee(employee).then(res=>{
                 this.props.navigate('/employees');
             });
@@ -78,7 +78,7 @@ class CreateEmployeeComponentSub extends Component {
     }*/
     
     getTitle(){
-        if (-1 == this.state.id){
+        if ('_add' === this.state.id){
             return <h3 className='text-center'>Add Employee</h3>
         }
         return <h3 className='text-center'>Update Employee</h3>
