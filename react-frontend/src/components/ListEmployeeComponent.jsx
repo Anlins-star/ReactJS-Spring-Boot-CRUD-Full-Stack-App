@@ -57,8 +57,13 @@ class ListEmployeeComponent extends Component {
                                              <Link to={`/add-employee/${employee.id}`}>
                                                 <button className='btn btn-primary'>Update</button>
                                             </Link>
-                                            
+
                                             <button style={{marginLeft:"10px"}} onClick={ () => this.deleteEmployee(employee.id)} className='btn btn-danger'>Delete</button>
+                                            
+                                            <Link to={`/view-employee/${employee.id}`}>
+                                                <button style={{marginLeft:"10px"}} className='btn btn-info'>View</button>
+                                            </Link>
+                                        
                                         </td>
                                     </tr>
                                 )
