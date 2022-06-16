@@ -21,7 +21,7 @@ class ListEmployeeComponent extends Component {
             <div>
                 <h2 className='text-center'>Employees List</h2>
                 <div className='row'>
-                    <Link to="/add-employee">
+                    <Link to="/add-employee/-1">
                         <button className='btn btn-primary'>Add Employee</button>
                     </Link>
                 </div>
@@ -48,7 +48,7 @@ class ListEmployeeComponent extends Component {
                                             {/* //https://stackoverflow.com/questions/53994363/react-router-link-variables-not-converted-to-values
                                             //https://stackoverflow.com/questions/53994363/react-router-link-variables-not-converted-to-values
                                              */}
-                                             <Link to={`/update-employee/${employee.id}`}>
+                                             <Link to={`/add-employee/${employee.id}`}>
                                                 <button className='btn btn-primary'>Update</button>
                                             </Link> 
                                         </td>

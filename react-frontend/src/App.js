@@ -16,8 +16,8 @@ function App() {
             <Routes>
               <Route path = "/" exact element = {<ListEmployeeComponent/>}/>
               <Route path = "/employees" exact element = {<ListEmployeeComponent/>}/>
-              <Route path = "/add-employee" exact element = {<CreateEmployeeComponent/>}/>
-              <Route path = "/update-employee/:id" exact element = {<UpdateEmployeeComponent/>}/>
+              <Route path = "/add-employee/:id" exact element = {<CreateEmployeeComponent/>}/>
+              {/* <Route path = "/update-employee/:id" exact element = {<UpdateEmployeeComponent/>}/> */}
             </Routes>
           </div>
           <FooterComponent/>
