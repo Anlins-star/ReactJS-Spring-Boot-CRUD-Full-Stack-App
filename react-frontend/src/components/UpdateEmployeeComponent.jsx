@@ -6,7 +6,7 @@ class UpdateEmployeeComponentSub extends Component {
     constructor(props){
         super(props)
         this.state = {
-            id: this.props.params.id,//this.props.match.params.id,
+            id: this.props.params.id,
             firstName: '',
             lastName: '',
             emailId:''
