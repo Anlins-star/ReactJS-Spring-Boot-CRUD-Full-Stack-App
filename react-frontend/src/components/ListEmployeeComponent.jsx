@@ -16,6 +16,12 @@ class ListEmployeeComponent extends Component {
         });
     }
 
+    deleteEmployee(id){
+        EmployeeService.deleteEmployeeById(id).then((res) => {
+            this.setState({ employees: this.state.employees.filter(employee=>employee.id !== id)});
+        });
+    }
+
     render() {
         return (
             <div>
@@ -50,7 +56,9 @@ class ListEmployeeComponent extends Component {
                                              */}
                                              <Link to={`/add-employee/${employee.id}`}>
                                                 <button className='btn btn-primary'>Update</button>
-                                            </Link> 
+                                            </Link>
+                                            
+                                            <button style={{marginLeft:"10px"}} onClick={ () => this.deleteEmployee(employee.id)} className='btn btn-danger'>Delete</button>
                                         </td>
                                     </tr>
                                 )
