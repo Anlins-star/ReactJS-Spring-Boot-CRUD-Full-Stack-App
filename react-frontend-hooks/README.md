@@ -76,3 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### adding boostrap 
 npm install bootstrap --save
+
+### adding axios 
+npm install axios --save
