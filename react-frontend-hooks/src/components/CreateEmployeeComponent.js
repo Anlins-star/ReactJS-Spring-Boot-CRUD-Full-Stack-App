@@ -15,15 +15,28 @@ const CreateEmployeeComponent = () => {
 
         const employee = {firstName, lastName, emailId}
 
+        if (id){
+            EmployeeService.updateEmployee(employee, id).then((responce) => {
+
+                //console.log(responce.data);
+                navigate('/employees')
+    
+            }).catch(error => {
+                console.log(error);
+            })
+        } else {
+            EmployeeService.createEmployee(employee).then((responce) => {
+
+                console.log(responce.data);
+                navigate('/employees')
+    
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+
         //console.log(employee);
-        EmployeeService.createEmployee(employee).then((responce) => {
 
-            console.log(responce.data);
-            navigate('/employees')
-
-        }).catch(error => {
-            console.log(error);
-        })
 
     }
 
