@@ -8,15 +8,28 @@ const ListEmployeeComponent = () => {
 
   useEffect(() => {
 
+    getAllEmployees();
+
+  }, [])
+
+
+  const getAllEmployees = () => {
     EmployeeService.getEmployees().then((responce) => {
         setEmployees(responce.data);
         console.log(responce.data);
     }).catch(error =>{
         console.log(error);
     })
+  }
 
-  }, [])
-
+  const deleteEmployee = (id) => {
+    //console.log(employeeId);
+    EmployeeService.deleteEmployeeById(id).then((responce) => {
+        getAllEmployees();
+    }).catch(error =>{
+        console.log(error);
+    })
+  }
 
   return (
     <div className='container'>
@@ -46,13 +59,8 @@ const ListEmployeeComponent = () => {
                             <Link to={`/update-employee/${employee.id}`}>
                                 <button className='btn btn-primary'>Update</button>
                             </Link>
-{
- //                           <button style={{marginLeft:"10px"}} onClick={ () => this.deleteEmployee(employee.id)} className='btn btn-danger'>Delete</button>
-}                           
-                            <Link to={`/view-employee/${employee.id}`}>
-                                <button style={{marginLeft:"10px"}} className='btn btn-info'>View</button>
-                            </Link>
-                        
+
+                            <button style={{marginLeft:"10px"}} onClick={ () => deleteEmployee(employee.id)} className='btn btn-danger'>Delete</button>
                         </td>
                         </tr>
                     )
