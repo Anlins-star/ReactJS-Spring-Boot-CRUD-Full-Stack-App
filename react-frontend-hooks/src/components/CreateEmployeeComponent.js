@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link, useNavigate  } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate, useParams  } from 'react-router-dom'
 import EmployeeService from '../services/EmployeeService';
 
 const CreateEmployeeComponent = () => {
@@ -8,6 +8,7 @@ const CreateEmployeeComponent = () => {
     const [lastName, setLastName] = useState('');
     const [emailId, setEmailId] = useState('');
     const navigate = useNavigate (); //In react-router-dom v6 useHistory() is replaced by useNavigate().
+    const {id} = useParams();
 
     const saveEmployee = (e) => {
         e.preventDefault();
@@ -25,12 +26,26 @@ const CreateEmployeeComponent = () => {
         })
 
     }
-    /*getTitle(){
-        if ('_add' === this.state.id){
+
+    useEffect(() => {
+        EmployeeService.getEmployeeById(id).then((responce)=>{
+           
+            setFirstName(responce.data.firstName)
+            setLastName(responce.data.lastName)
+            setEmailId(responce.data.emailId)
+        }).catch(error=>{
+            console.log(error)
+        })
+    }, [])
+
+    const title = () => {
+        if (id){
+            return <h3 className='text-center'>Update Employee</h3>
+        } else {
             return <h3 className='text-center'>Add Employee</h3>
         }
-        return <h3 className='text-center'>Update Employee</h3>
-    }*/
+        
+    }
 
     return (
         <div>
@@ -38,9 +53,9 @@ const CreateEmployeeComponent = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='card col-md-6 offset-md-3 offset-md-3'>
-                    <h2 className='text-center'>Add Employee</h2>
+                   
                         {
-                            //this.getTitle()
+                            title()
                         }
                         <div className='card-body'>
                             <form>
