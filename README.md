@@ -28,3 +28,22 @@ npm install axios --safe
 
 npm install react-router-dom
  
+
+# adding Angular:
+from CMD: "node -v"
+from CMD: "npm -v"
+
+https://angular.io/cli
+
+(optional if PS is blocked) from CMD: "set-ExecutionPolicy RemoteSigned -Scope CurrentUser "
+from CMD: "npm install -g @angular/cli"
+
+To create project, you need to open VisualCode in root folder:
+from CMD: "code ."
+
+In VC open terminal: "ng new angular-frontend"
+routing: YES, styling CSS
+ 
+RUN: 
+from VC Terminal: "cd .\angular-frontend\"
+from VC Terminal: "ng serve"
