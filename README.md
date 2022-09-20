@@ -47,3 +47,5 @@ routing: YES, styling CSS
 RUN: 
 from VC Terminal: "cd .\angular-frontend\"
 from VC Terminal: "ng serve"
+
+install bootstrap. From VC Terminal in project root folder: "npm install bootstrap --save"
