@@ -52,6 +52,8 @@ install bootstrap. From VC Terminal in project root folder: "npm install bootstr
 
 Generate Angular class: in VC Terminal root folder: "ng g class employee"
 Generate Angular component: in VC Terminal root folder: "ng g c employee-list"
+Generate Angular service: in VC Terminal root folder: "ng g s employee"
+
 
 issue: "roperty 'id' has no initializer and is not definitely assigned in the constructor."
 Finally found an answer. I had to make strictPropertyInitialization flag to false inside tsconfig.json. Adding this since someone came up with same issue would find this useful. (You may have to use ng serve again)

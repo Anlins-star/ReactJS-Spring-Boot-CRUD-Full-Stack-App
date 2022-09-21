@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
-@CrossOrigin(origins="http://localhost:3000")
+@CrossOrigin(origins={"http://localhost:3000","http://localhost:4200"})
 @RestController
 @RequestMapping("api/v1/")
 public class EmployeeController {
