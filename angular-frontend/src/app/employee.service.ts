@@ -16,9 +16,20 @@ export class EmployeeService {
     return this.httpClient.get<Employee[]>(`${this.baseUrl}`);
   }
 
-  
   createEmployee(employee: Employee): Observable <Object>{ //if do not know responce return <any> or <Object>
     return this.httpClient.post(`${this.baseUrl}`, employee);
   }
-  
+    
+  getEmployeeById(id: number): Observable <Employee>{
+    return this.httpClient.get<Employee>(`${this.baseUrl}/${id}`);
+  }
+    
+  updateEmployee(employee: Employee): Observable <Object>{ //if do not know responce return <any> or <Object>
+    return this.httpClient.put(`${this.baseUrl}/${employee.id}`, employee);
+  }
+    
+  deleteEmployee(id: number): Observable <Object>{ //if do not know responce return <any> or <Object>
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
 }
