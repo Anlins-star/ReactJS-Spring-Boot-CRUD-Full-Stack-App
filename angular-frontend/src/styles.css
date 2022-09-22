@@ -8,7 +8,7 @@
 */
 
 /*second approach of adding a bootstrap here*/
-@import "~bootstrap/dist/css/bootstrap.min.css"
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 /*third approach of copy url from CDN.
  - Google "bootstrap 5 cdn link" 
@@ -18,3 +18,13 @@
  add it into root/index.html
  */
 /*@import "~bootstrap/dist/css/bootstrap.min.css"*/
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background-color: blue;
+  text-align: center;
+  color: white;
+}
